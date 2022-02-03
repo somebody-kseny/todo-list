@@ -19,7 +19,7 @@
             border: solid;
             border-color: grey;
             border-width: 1px;
-            background-color: white;
+            // background-color: white;
         }
 
         &_button {
@@ -76,12 +76,14 @@
     padding: $pd-m;
     border-radius: $radius/2;
     box-sizing: border-box;
+    color: var(--c-text);
 }
 
 .edit_input {
     margin: $pd-m /2;
     padding: $pd-m /2;
     background-color: var(--c-edit-bg);
+    color: var(--c-text);
 }
 
 .theme_icon {
@@ -94,7 +96,7 @@
     opacity: 100%;
 }
 .error_msg {
-    color: var(--c-err);
+    color: var(--c-text);
     font-size: 14px;
     position: absolute;
     top: -0.5rem;
