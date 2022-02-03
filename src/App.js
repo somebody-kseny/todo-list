@@ -65,17 +65,13 @@ const App = () => {
         },
         // dark
         {
-            "--c-bg": "black",
-            "--c-header": "#F28482",
-            "--c-button": "#84A59D",
-            "--c-button-hover": "#57756E",
-            "--c-edit-bg": "#FCEFEE",
+            "--c-bg": "#121212",
+            "--c-header": "#FFFF79",
+            "--c-button": "#8C2F39",
+            "--c-button-hover": "#B23A48",
+            "--c-edit-bg": "#474747",
             "--c-text": "white"
-        },
-        // strange
-        // {
-
-        // }
+        }
     ];
 
     let startTheme = 0;
