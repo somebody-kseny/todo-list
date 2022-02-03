@@ -1,0 +1,52 @@
+$pd-l: 16px;
+$pd-m: 8px;
+$pd-s: 3px;
+$radius: 8px;
+
+body {
+    --c-bg: white;
+    --c-header: #F28482;
+    --c-button: #84A59D;
+    --c-button-hover: #57756E;
+    --c-edit-bg: #FCEFEE;
+    --c-text: black;
+
+    min-height: 100vh;
+    background-color: var(--c-bg);
+}
+
+p {
+    color: var(--c-text);
+}
+
+body, input, button, p {
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body button {
+    padding: $pd-m;
+    border-radius: $radius/2;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.wrapper {
+    margin: 0;
+    padding: $pd-l;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 30px;
+}
+
+.header {
+    font-family: 'Caveat', Roboto, sans-serif;
+    font-size: 70px;
+    color: var(--c-header);
+}
