@@ -14,6 +14,7 @@ module.exports = {
 	devServer: {
 		static: './dist',
 		port: 2042,
+		https: true,
 		historyApiFallback: true,
 		devMiddleware: {
 			writeToDisk: true,
@@ -52,7 +53,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.s?css$/,
-				include: path.resolve(__dirname, 'src'),
+				include: [ path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules/yandex-messenger-widget-beta')],
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 			},
 			{

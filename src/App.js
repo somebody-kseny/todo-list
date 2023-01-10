@@ -100,6 +100,7 @@ const App = () => {
                 <h2 className='header'>Список дел</h2>
                 <div className='list_wrapper'>
                     <AddItem addItem={addItem}/>
+                    <a href="https://yandex.ru/chat#/join/e98af9f0-6c98-447e-8ccb-72872f34b918">messagelink</a>
                     <TodoList {...{
                         items: list, 
                         callbacks: {
