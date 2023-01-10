@@ -10,6 +10,7 @@ import AddItem from "./todo/AddItem";
 
 const App = () => {
     const [list, setList] = React.useState(JSON.parse(window.localStorage.getItem('list')) || []);
+    const [msgLink, setMsgLink] = React.useState('https://yandex.ru/chat#/join/e98af9f0-6c98-447e-8ccb-72872f34b918');
     
     const addItem = (text) => {
         const res = list.concat({
@@ -17,6 +18,11 @@ const App = () => {
             done: false,
             id: Date.now()
         });
+
+        if (text.includes('yandex.ru')) {
+            setMsgLink(text);
+            return;
+        }
 
         setList(res);
         localStorage.setItem('list', JSON.stringify(res));
@@ -100,7 +106,7 @@ const App = () => {
                 <h2 className='header'>Список дел</h2>
                 <div className='list_wrapper'>
                     <AddItem addItem={addItem}/>
-                    <a href="https://yandex.ru/chat#/join/e98af9f0-6c98-447e-8ccb-72872f34b918">messagelink</a>
+                    <a href={msgLink}>messagelink {msgLink}</a>
                     <TodoList {...{
                         items: list, 
                         callbacks: {
