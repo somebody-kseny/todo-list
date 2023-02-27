@@ -19,6 +19,7 @@ module.exports = {
 		devMiddleware: {
 			writeToDisk: true,
 		},
+		allowedHosts: 'all',
 	},
 	stats: {
 		children:true,

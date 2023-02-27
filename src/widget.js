@@ -3,7 +3,6 @@ import {
     buttonUIFactory,
     yandexUnreadCounterFactory,
     Deeplinker,
-    NativeInterceptor,
 } from 'yandex-messenger-widget-beta';
 import 'yandex-messenger-widget-beta/lib/ui/button.css';
 
@@ -15,12 +14,15 @@ const ui = buttonUIFactory({
 
 const widget = createMultiChatsWidget({
     serviceId: -1,
+    orgId: 7167300,
+    flags: {
+        enableWorkplace: 1,
+    }
 })
 
 widget
     .addPlugin(unreadCounterPlugin)
     .addPlugin(new Deeplinker())
-    .addPlugin(new NativeInterceptor())
     .setUI(ui)
     .init()
 
