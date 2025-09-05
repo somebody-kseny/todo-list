@@ -1,0 +1,44 @@
+@use 'sass:math';
+@import '../../index.scss';
+
+.input {
+    padding: $pd-m;
+    border-radius: math.div($radius, 2);
+    box-sizing: border-box;
+    color: var(--c-text);
+}
+
+.list_add {
+    margin-bottom: $pd-m;
+
+    & > form {
+        display: flex;
+        flex-direction: row;
+        gap: $pd-m;
+    }
+
+    &_input {
+        border: solid;
+        border-color: grey;
+        border-width: 1px;
+        // background-color: white;
+    }
+
+    &_button {
+        background-color: var(--c-button);
+        color: white;
+        &:hover {
+            background-color: var(--c-button-hover);
+        }
+    }
+}
+
+.error_msg {
+    color: var(--c-text);
+    font-size: 14px;
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    background-color: var(--c-bg);
+    text-align: center;
+}

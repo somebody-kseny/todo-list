@@ -1,0 +1,8 @@
+@import '../../index.scss';
+
+.edit_input {
+    margin: $pd-m / 2;
+    padding: $pd-m / 2;
+    background-color: var(--c-edit-bg);
+    color: var(--c-text);
+}
