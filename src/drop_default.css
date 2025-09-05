@@ -97,19 +97,19 @@ textarea,
 /* textarea:hover, */
 /* textarea:active, */
 p {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	font-family: inherit;
-	background-color: transparent;
-	letter-spacing: inherit;
-	border-radius: 0px;
-	border: none;
-	border-color: transparent;
-	display: block;
-	outline: none; 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    letter-spacing: inherit;
+    border-radius: 0px;
+    border: none;
+    border-color: transparent;
+    display: block;
+    outline: none;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -123,28 +123,28 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol,
 ul,
 li {
-	list-style-type: circle;
+    list-style-type: circle;
 }
 blockquote,
 q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
