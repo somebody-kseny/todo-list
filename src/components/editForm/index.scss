@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+@import '../../index.scss';
+
+.edit_form {
+    width: 100%;
+
+    &__input {
+        padding: math.div($pd-m, 2);
+        border: solid;
+        border-width: 1px;
+    }
+}

@@ -3,6 +3,6 @@ import { Item } from './base';
 export interface LocalStorage {
     list: Item[];
     theme: {
-        theme: number;
+        theme: 'light' | 'dark';
     };
 }

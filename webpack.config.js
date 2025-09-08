@@ -1,7 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
@@ -46,7 +45,6 @@ module.exports = {
                 extensions: ['.ts', '.tsx', '.jsx', '...'],
             }),
         ],
-        // extensions: ['.ts', '.tsx', '.jsx', '...'],
         alias: {
             '@components': [path.resolve(__dirname, 'src', 'components')],
             '@projectTypes': [path.resolve(__dirname, 'src', 'types')],
@@ -61,14 +59,6 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: filename('css'),
-        }),
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/images'),
-                    to: path.resolve(__dirname, 'dist/images'),
-                },
-            ],
         }),
         new CleanWebpackPlugin(),
     ],
@@ -99,16 +89,9 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(jpe?g|png|gif|svg|ico|webp)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            outputPath: 'image',
-                            relativePath: true,
-                        },
-                    },
-                ],
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: ['@svgr/webpack'],
             },
         ],
     },
