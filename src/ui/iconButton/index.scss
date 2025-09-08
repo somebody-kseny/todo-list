@@ -1,0 +1,17 @@
+@import '../../index.scss';
+
+.ui-iconButton {
+    width: $pd-l * 2;
+    height: $pd-l * 2;
+    padding: 0;
+
+    color: var(--primary);
+
+    &:hover {
+        color: var(--primary-hover);
+    }
+
+    &_destructive:hover {
+        color: var(--destructive);
+    }
+}

@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { EditItem } from '@components/editItem';
+import { EditForm } from '@components/editForm';
+
+import { IconButton } from 'ui';
+import SaveIcon from '../../images/icons/save.svg';
+import EditIcon from '../../images/icons/edit.svg';
+import TrashIcon from '../../images/icons/trash.svg';
 
 import './index.scss';
 
@@ -17,41 +22,59 @@ const TodoItem = ({ item, changeItemDone, changeItem, removeItem }) => {
         };
     }
 
-    return (
-        <li className="list_item">
-            <div>
-                <input
-                    type="checkbox"
-                    checked={item.done}
-                    className="list_item_done"
-                    onChange={() => {
-                        changeItemDone(item.id);
-                    }}
-                ></input>
+    const submit = (value) => {
+        setIfEdited(false);
+        changeItem(item.id, value);
+    };
 
-                {isEdited ?
-                    <EditItem
-                        item={item}
-                        changeItem={changeItem}
-                        setIfEdited={setIfEdited}
-                    />
-                :   <p
-                        onDoubleClick={startEdit}
-                        className="input"
-                        style={textStyle}
-                    >
-                        {item.text}
-                    </p>
-                }
-            </div>
-            <button
-                className="list_item_delete"
-                onClick={() => {
-                    removeItem(item.id);
+    const submitRef = React.useRef();
+
+    return (
+        <li className="list_item list_item_base">
+            <input
+                type="checkbox"
+                checked={item.done}
+                className="list_item__done"
+                onChange={() => {
+                    changeItemDone(item.id);
                 }}
-            >
-                х
-            </button>
+                name="пометить прочитанным"
+            ></input>
+
+            {isEdited ?
+                <EditForm
+                    item={item}
+                    submit={submit}
+                    submitRef={submitRef}
+                />
+            :   <p
+                    onDoubleClick={startEdit}
+                    className="input"
+                    style={textStyle}
+                >
+                    {item.text}
+                </p>
+            }
+            {isEdited ?
+                <IconButton
+                    onClick={() => {
+                        submitRef.current.click();
+                    }}
+                >
+                    <SaveIcon />
+                </IconButton>
+            :   <>
+                    <IconButton
+                        onClick={() => removeItem(item.id)}
+                        destructive
+                    >
+                        <TrashIcon />
+                    </IconButton>
+                    <IconButton onClick={() => startEdit(item.id)}>
+                        <EditIcon />
+                    </IconButton>
+                </>
+            }
         </li>
     );
 };

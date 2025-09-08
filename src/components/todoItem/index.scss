@@ -5,37 +5,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: $pd-m;
 
     padding: $pd-l;
-    border: solid;
     border-radius: $radius;
-    border-width: 1px;
-    border-color: lightgrey;
+    min-height: 72px;
+    box-sizing: border-box;
 
-    &_done {
+    &_base {
+        border: solid;
+        border-width: 1px;
+        border-color: var(--text);
+    }
+
+    &__done {
         transform: scale(1.5);
-    }
-
-    & > div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: $pd-l;
-    }
-
-    &_delete {
-        color: lightgrey;
-
-        font-family: 'Caveat', Roboto, sans-serif;
-        font-size: 30px;
-        font-stretch: ultra-expanded;
-        line-height: 40%;
-        padding-right: 12px;
-        padding-bottom: 12px;
-        padding-left: 8px;
-        padding-top: 8px;
-    }
-    &_delete:hover {
-        color: var(--c-header);
+        accent-color: var(--primary-hover);
     }
 }

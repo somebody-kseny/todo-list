@@ -1,0 +1,16 @@
+body[data-theme='light'] {
+    --text: #000000;
+    --background: #ffffff;
+    --primary: #6c6c6c;
+    --primary-hover: #595959;
+    --destructive: #e02639;
+    --accent: #3a2e39;
+}
+body[data-theme='dark'] {
+    --text: #ffffff;
+    --background: #242424;
+    --primary: #9b9b9b;
+    --primary-hover: #b1b1b1;
+    --destructive: #e02639;
+    --accent: #fff8ff;
+}

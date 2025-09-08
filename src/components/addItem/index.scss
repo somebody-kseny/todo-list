@@ -1,13 +1,6 @@
 @use 'sass:math';
 @import '../../index.scss';
 
-.input {
-    padding: $pd-m;
-    border-radius: math.div($radius, 2);
-    box-sizing: border-box;
-    color: var(--c-text);
-}
-
 .list_add {
     margin-bottom: $pd-m;
 
@@ -15,30 +8,36 @@
         display: flex;
         flex-direction: row;
         gap: $pd-m;
+        width: 100%;
     }
 
     &_input {
         border: solid;
         border-color: grey;
         border-width: 1px;
-        // background-color: white;
+        width: 100%;
+
+        &_wrapper {
+            width: 70%;
+            flex-grow: 1;
+        }
     }
 
     &_button {
-        background-color: var(--c-button);
-        color: white;
+        background-color: var(--primary);
+        color: var(--background);
         &:hover {
-            background-color: var(--c-button-hover);
+            background-color: var(--primary-hover);
         }
     }
 }
 
 .error_msg {
-    color: var(--c-text);
+    color: var(--text);
     font-size: 14px;
     position: absolute;
     top: -0.5rem;
     left: 0.5rem;
-    background-color: var(--c-bg);
+    background-color: var(--background);
     text-align: center;
 }

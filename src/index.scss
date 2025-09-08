@@ -6,19 +6,12 @@ $pd-s: 3px;
 $radius: 8px;
 
 body {
-    --c-bg: white;
-    --c-header: #f28482;
-    --c-button: #84a59d;
-    --c-button-hover: #57756e;
-    --c-edit-bg: #fcefee;
-    --c-text: black;
-
     min-height: 100vh;
-    background-color: var(--c-bg);
+    background-color: var(--background);
 }
 
 p {
-    color: var(--c-text);
+    color: var(--text);
 }
 
 body,
@@ -37,4 +30,29 @@ body button {
     &:hover {
         cursor: pointer;
     }
+}
+
+.input {
+    padding: $pd-m;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: justify;
+    box-sizing: border-box;
+
+    border-color: var(--text);
+    border-radius: math.div($radius, 2);
+    border-width: 1px;
+
+    color: var(--text);
+
+    &:focus {
+        border-color: var(--text);
+    }
+}
+
+.icon {
+    width: $pd-l * 2;
+    height: $pd-l * 2;
+    padding: 0;
 }

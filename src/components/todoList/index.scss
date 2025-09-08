@@ -14,21 +14,6 @@
             flex-direction: row;
             gap: $pd-m;
         }
-
-        &_input {
-            border: solid;
-            border-color: grey;
-            border-width: 1px;
-            // background-color: white;
-        }
-
-        &_button {
-            background-color: var(--c-button);
-            color: white;
-            &:hover {
-                background-color: var(--c-button-hover);
-            }
-        }
     }
 
     margin: 0;

@@ -7,6 +7,9 @@ import type { Item } from '../../types';
 import * as storageHelpers from '../../helpers/storage';
 
 import './index.scss';
+import { IconButton } from 'ui';
+
+import ThemeIcon from '../../images/icons/theme.svg';
 
 export const App: React.FC = () => {
     const [list, setList] = React.useState<Item[]>(
@@ -14,11 +17,14 @@ export const App: React.FC = () => {
     );
 
     const addItem = (text: string) => {
-        const res = list.concat({
-            text,
-            done: false,
-            id: Date.now(),
-        });
+        const res = [
+            {
+                text,
+                done: false,
+                id: Date.now(),
+            },
+            ...list,
+        ];
 
         setList(res);
         storageHelpers.setJsonItem('list', res);
@@ -55,52 +61,33 @@ export const App: React.FC = () => {
         storageHelpers.setJsonItem('list', res);
     };
 
-    const themes = [
-        // light
-        {
-            '--c-bg': 'white',
-            '--c-header': '#F28482',
-            '--c-button': '#84A59D',
-            '--c-button-hover': '#57756E',
-            '--c-edit-bg': '#FCEFEE',
-            '--c-text': 'black',
-        },
-        // dark
-        {
-            '--c-bg': '#121212',
-            '--c-header': '#FFFF79',
-            '--c-button': '#8C2F39',
-            '--c-button-hover': '#B23A48',
-            '--c-edit-bg': '#474747',
-            '--c-text': 'white',
-        },
-    ];
-
-    const startTheme = storageHelpers.getJsonItem('theme', { theme: 0 }).theme;
-    const [themeNum, setThemeNum] = React.useState(startTheme);
-
-    const bodyNode = document.body || document.getElementsByTagName('body')[0];
-    Object.entries(themes[themeNum]).forEach(([key, value]) => {
-        bodyNode.style.setProperty(key, value);
-    });
+    const startTheme = storageHelpers.getJsonItem('theme', {
+        theme: 'light',
+    }).theme;
+    const [theme, setTheme] = React.useState(startTheme);
+    React.useEffect(() => {
+        document.body.dataset.theme = theme;
+    }, [theme]);
 
     const changeTheme = () => {
-        let res = 0;
-        if (themes.length - themeNum > 1) {
-            res = themeNum + 1;
+        let res: 'dark' | 'light' = 'dark';
+
+        if (theme === 'dark') {
+            res = 'light';
         }
-        setThemeNum(res);
+
         storageHelpers.setJsonItem('theme', { theme: res });
+        setTheme(res);
     };
 
     return (
         <div className="wrapper">
-            <button
-                className="theme_icon"
+            <IconButton
                 onClick={changeTheme}
+                className="theme_icon"
             >
-                <img src="./images/icons/pallete.png" />
-            </button>
+                <ThemeIcon className="theme_icon__svg" />
+            </IconButton>
             <h2 className="header">Список дел</h2>
             <div className="list_wrapper">
                 <AddItem addItem={addItem} />
