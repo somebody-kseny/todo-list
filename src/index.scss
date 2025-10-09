@@ -8,10 +8,12 @@ $radius: 8px;
 body {
     min-height: 100vh;
     background-color: var(--background);
+    user-select: none;
 }
 
 p {
     color: var(--text);
+    user-select: text;
 }
 
 body,
