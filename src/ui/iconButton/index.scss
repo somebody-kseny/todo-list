@@ -13,5 +13,13 @@
 
     &_destructive:hover {
         color: var(--destructive);
+
+        @media (hover: none) {
+            color: var(--primary);
+        }
+    }
+
+    &_destructive:active {
+        color: var(--destructive);
     }
 }

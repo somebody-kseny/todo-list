@@ -13,9 +13,7 @@
     box-sizing: border-box;
 
     &_base {
-        border: solid;
-        border-width: 1px;
-        border-color: var(--text);
+        background-color: var(--background-secondary);
     }
 
     &__done {

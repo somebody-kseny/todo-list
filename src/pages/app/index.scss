@@ -1,12 +1,5 @@
 @import '../../index.scss';
 
-.theme_icon {
-    align-self: flex-end;
-    justify-self: start;
-    position: sticky;
-    top: $pd-l;
-}
-
 .wrapper {
     margin: 0;
     padding: $pd-l;
@@ -16,6 +9,16 @@
     align-items: center;
     justify-items: center;
     gap: 30px;
+
+    &__corner_icons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: end;
+
+        position: sticky;
+        top: $pd-l;
+    }
 }
 
 .header {

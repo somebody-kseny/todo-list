@@ -4,6 +4,7 @@
         "noImplicitAny": true,
         "module": "es6",
         "target": "es6",
+        "lib": ["ES5", "ES2023", "dom"],
         "jsx": "react",
         "allowJs": true,
         "outDir": "./dist",

@@ -1,16 +1,18 @@
 body[data-theme='light'] {
     --text: #000000;
     --background: #ffffff;
-    --primary: #6c6c6c;
-    --primary-hover: #595959;
+    --background-secondary: #c8efa0;
+    --primary: #564a56;
+    --primary-hover: #2b252b;
     --destructive: #e02639;
     --accent: #3a2e39;
 }
 body[data-theme='dark'] {
     --text: #ffffff;
-    --background: #242424;
-    --primary: #9b9b9b;
-    --primary-hover: #b1b1b1;
+    --background: #2b252b;
+    --background-secondary: #4c394c;
+    --primary: #aada7a;
+    --primary-hover: #b8f27f;
     --destructive: #e02639;
     --accent: #fff8ff;
 }
