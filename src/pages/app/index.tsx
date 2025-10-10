@@ -116,7 +116,7 @@ export const App: React.FC = () => {
                 </IconButton>
             </div>
 
-            <h2 className="header">Список дел</h2>
+            <h1 className="header">Список дел</h1>
             <div className="list_wrapper">
                 <AddItem addItem={addItem} />
                 <TodoList
